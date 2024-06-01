@@ -41,10 +41,21 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
         login(username, password).then(response => {
             if (response.status === "SUCCESS" && response.data && response.data.accessToken) {
+                const isAdmin = response.data.authorities.some(auth => auth.authority === 'ROLE_ADMIN');
+                {
+                    if (isAdmin) {
+                        localStorage.setItem('accessToken', response.data.accessToken);
+                        localStorage.setItem('username', username);
+                        window.location = "user.html";
+                    }
+                    else {
+                        localStorage.setItem('accessToken', response.data.accessToken);
+                        localStorage.setItem('username', username);
+                        window.location = "user_index.html";
+                    }
+                }                
                 // Lưu accessToken và chuyển hướng người dùng
-                localStorage.setItem('accessToken', response.data.accessToken);
-                localStorage.setItem('username', username);
-                window.location = "user_index.html";
+
             } else {
                 swal({
                     title: "",
@@ -67,6 +78,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         return false; // Để ngăn chặn hành động submit mặc định của form
     })
 
-    
+
 });
 

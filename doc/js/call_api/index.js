@@ -20,18 +20,16 @@ document.addEventListener('DOMContentLoaded', async function () {
                 // Kiểm tra quyền admin
                 const isAdmin = response.data.authorities.some(auth => auth.authority === 'ROLE_ADMIN');
                 if (!isAdmin) {
-                    swal({
-                        title: "",
-                        text: "Bạn không đủ quyền truy cập!",
-                        icon: "error",
-                        close: true,
-                        button: "Thử lại",
-                    });
-                    return false;
+                    localStorage.setItem('accessToken', response.data.accessToken);
+                    localStorage.setItem('username', username);
+                    window.location = "./user_index.html";
+                }
+                else{
+                    localStorage.setItem('accessToken', response.data.accessToken);
+                    window.location = "./user.html";
                 }
                 // Lưu accessToken và chuyển hướng người dùng
-                localStorage.setItem('accessToken', response.data.accessToken);
-                window.location = "./user.html";
+                
             } else {
                 swal({
                     title: "",
