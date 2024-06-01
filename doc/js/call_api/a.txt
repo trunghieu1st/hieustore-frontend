@@ -1,0 +1,31 @@
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+ toastr.options = {
+    progressBar: false,
+    newestOnTop: true,           // Hiển thị thông báo mới nhất ở trên cùng
+    preventDuplicates: false,
+    onclick: null,
+    positionClass: 'toast-top-center',
+    toastClass: 'toastr-custom-width',
+    showEasing: 'swing',         // Hiệu ứng hiển thị
+    hideEasing: 'linear',        // Hiệu ứng ẩn
+    showMethod: 'fadeIn',        // Phương thức hiển thị
+    hideMethod: 'fadeOut',        // Phương thức ẩn      
+    timeOut: '3000',             // Thời gian tự động ẩn thông báo (milliseconds)           
+    extendedTimeOut: 0,
+};
+ toastr.success("Thêm sản phẩm vào giỏ thành công!");     
+ toastr.error("Số lượng nhập vượt qua hàng tồn kho!");
+ <script
+        src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+
+ $.LoadingOverlay("show", {
+        background: "rgba(255, 255, 255, 0.6)",
+        imageAnimation: "3000ms rotate_right",
+        image: "./img/loading.jpg",
+        imageColor: "black",
+        maxSize: 100,
+    });
+
+ $.LoadingOverlay("hide");
+    

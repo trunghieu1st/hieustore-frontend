@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chi tiết sản phẩm Hieu Store</title>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a id="myaccount" href="user_information.html"><i class="fa fa-user"></i>Tài khoản của
+                                    tôi</a>
+                            </li>
+                            <li><a href="user_cart.html"><i class="fa fa-user"></i>Giỏ hàng</a></li>
+                            <li><a href="user_order.html"><i class="fa fa-user"></i>Đặt hàng</a></li>
+                            <li id="li-login"><a href="user_login.html"><i class="fa fa-user"></i>Đăng nhập</a></li>
+                            <li id="li-logout"><a id="li-username"><i class="fa fa-user"></i>Đăng xuất - </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <ul class="list-unstyled list-inline">
+                                    <li class="dropdown dropdown-small">
+                                        <div>
+                                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle"
+                                                href="#"><span class="key"></span><span class="value">Chức năng</span><b
+                                                    class="caret"></b></a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="custom-input3" href="user_information.html">Thông tin cá nhân</a>
+                                            </li>
+                                            <li><a class="custom-input3" href="user_cart.html">Giỏ hàng</a></li>
+                                            <li><a class="custom-input3" href="user_order.html">Đặt hàng</a></li>
+                                            <li><a class="custom-input3" href="user_myorder.html">Đơn hàng</a></li>
+                                            <li><a class="custom-input3" href="user_index.html">Trang chủ</a></li>
+                                            <li><a class="custom-input3" href="user_login.html">Tài khoản khác</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/api/number_card.js"></script>
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <a href="./"><img style="height: 55px;" src="img/logo.png"></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <input id="keyword" class="custom-input" type="text" placeholder="Nhập tên sản phẩm"
+                        style="width: 350px; margin-left: -250px;margin-top: 10px;">
+                    <input id="search" class="custom-input" type="submit" value="Tìm kiếm">
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="shopping-item custom-input" style="margin-top: -40px;">
+                        <a href="user_cart.html"><span class="cart-amunt">Giỏ hàng</span>
+                            <i class="fa fa-shopping-cart"></i>
+                            <span id="number-card" class="product-count"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------------Menu ---------------------------------------------- -->
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="custom-input2" href="user_index.html">Trang chủ</a></li>
+                        <li><a class="custom-input2" href="user_shop.html">Danh sách sản phẩm</a></li>
+                        <li class="active"><a class="custom-input2" href="user_singleproduct.html">Thông tin sản phẩm</a>
+                        </li>
+                        <li><a class="custom-input2" href="user_order.html">Đặt hàng</a></li>
+                        <li><a class="custom-input2" href="user_news.html">Tin tức</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/api/productinfo.js"></script>
+    <div class="single-product-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="single-sidebar" id="similarProduct">
+                        <h2 class="sidebar-title">Sản phẩm tương tự</h2>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="user_index.html">Trang chủ</a>
+                            <a href="user_shop.html">Danh sách sản phẩm</a>
+                            <a href="" id="product-name"> </a>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <img src="" id="product-image" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------------------------------------Thông tin chi tiết sản phẩm---------------------------------------------->
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name" id="product-name"></h2>
+                                    <div class="product-inner-price">
+                                        <ins id="product-price"></ins>
+                                    </div>
+                                    <form action="" class="cart">
+                                        <div class="quantity">
+                                            <input type="number" size="4" id="maxCount" class="input-text qty text"
+                                                title="Qty" value="1" name="quantity" min="1" step="1" required>
+                                        </div>
+                                        <a id="addToCart" class="add_to_cart_button">Thêm vào giỏ hàng</a>
+                                    </form>
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home"
+                                                    role="tab" data-toggle="tab">Thông tin sản phẩm</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile"
+                                                    role="tab" data-toggle="tab">Đánh giá</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <div id="product-description"></div>
+                                            </div>
+
+                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                                <h2>Reviews</h2>
+                                                <div class="submit-review">
+                                                    <p><label for="name">Tên của bạn</label>
+                                                        <input id="sb-name" name="name" type="text" required>
+                                                    </p>
+                                                    <p><label for="email">Email</label>
+                                                        <input id="sb-email" name="email" type="email" required>
+                                                    </p>
+                                                    <div class="rating-chooser">
+                                                        <p>Đánh giá sản phẩm</p>
+                                                        <div class="rating-wrap-post">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p><label for="review">Đánh giá của bạn về sản phẩm này</label>
+                                                        <textarea id="sb-textarea" name="review" id="" cols="30"
+                                                            rows="10" required></textarea>
+                                                    </p>
+                                                    <p><input type="submit" value="Gửi đánh giá" onclick="review()"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="productModal" tabindex="-1" role="dialog"
+                                aria-labelledby="productModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" id="modal-body">
+                                            <!-- Product details will be inserted here -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Đóng</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./js/api/index.js"></script>
+        <div class="maincontent-area">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="latest-product">
+                            <div class="product-carousel" id="latest-product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function review() {
+            alert('Đánh giá đã được gửi! Shop gửi lời cảm ơn chân thành tới bài đánh giá của bạn!');
+            document.getElementById('sb-name').value = "";
+            document.getElementById('sb-email').value = "";
+            document.getElementById('sb-textarea').value = "";
+        }
+    </script>
+    <!-- ------------------------------------------------Thông tin chi tiết về cưqra hàng ---------------------------------------------- -->
+    <div class="footer-top-area" style="height: 400px;">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2><span>Hieu Store</span></h2>
+                        <p>Website bán điện thoại trực tuyến với những chiếc điện thoại mới nhất được cập nhập liên tục.
+                        </p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/trunghieu1st/" target="_blank"><i
+                                    class="fa fa-facebook"></i></a>
+                            <!-- <a href="#" target="_blank"><i class="fa fa-twitter"></i></a> -->
+                            <a href="https://www.youtube.com/channel/UCofZpSuoW0D5fRM2hv6IOLQ" target="_blank"><i
+                                    class="fa fa-youtube"></i></a>
+                            <!-- <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Công cụ</h2>
+                        <ul>
+                            <li><a href="user_information.html">Tài khoản của tôi</a></li>
+                            <li><a href="user_singleproduct.html">Lịch sử đặt hàng</a></li>
+                            <li><a href="user_cart.html">Giỏ hàng</a></li>
+                            <li><a href="user_index.html">Trang chủ</a></li>
+                            <li><a href="user_news.html">Tin tức</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Danh mục sản phẩm</h2>
+                        <ul>
+                            <li><a href="user_shop.html">Điện thoại iPhone</a></li>
+                            <li><a href="user_shop.html">Điện thoại Samsung</a></li>
+                            <li><a href="user_shop.html">Điện thoại Nokia</a></li>
+                            <li><a href="user_shop.html">Điện thoại Xiaome</a></li>
+                            <li><a href="user_shop.html">Điện thoại Oppe</a></li>
+                            <li><a href="user_shop.html">Phụ kiện điên thoại</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Góp ý</h2>
+                        <p>Góp ý cho cửa hàng là một điều quan trọng để cửa hàng thay đổi tốt hơn và phát triển hơn!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="text" placeholder="Nhập góp ý của bạn..." style="margin-bottom: 5px;">
+                                <input type="submit" value="Gửi góp ý">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- jQuery sticky menu -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <!-- jQuery easing -->
+    <script src="js/jquery.easing.1.3.min.js"></script>
+    <!-- Main Script -->
+    <script src="js/user_main.js"></script>
+    <script type="module" src="./js/api/category.js"></script>
+    <script type="module" src="./js/api/switchLogin.js"></script>
+    <!-- <script type="module" src="./js/api/checklogin.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sản phẩm - HieuStore</title>
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="https://static-product.cellphones.com.vn/css/a2f0f46.css">
+    <link rel="stylesheet" href="https://static-product.cellphones.com.vn/css/02782d1.css">
+    <link rel="stylesheet" href="https://static-product.cellphones.com.vn/css/fc17655.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+</head>
+
+<body>
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a id="myaccount" href="user_information.html"><i class="fa fa-user"></i>Tài khoản của
+                                    tôi</a>
+                            </li>
+                            <li><a href="user_cart.html"><i class="fa fa-user"></i>Giỏ hàng</a></li>
+                            <li><a href="user_order.html"><i class="fa fa-user"></i>Đặt hàng</a></li>
+                            <li id="li-login"><a href="user_login.html"><i class="fa fa-user"></i>Đăng nhập</a></li>
+                            <li id="li-logout"><a id="li-username"><i class="fa fa-user"></i>Đăng xuất - </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <ul class="list-unstyled list-inline">
+                                    <li class="dropdown dropdown-small">
+                                        <div>
+                                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle"
+                                                href="#"><span class="key"></span><span class="value">Chức năng</span><b
+                                                    class="caret"></b></a>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="custom-input3" href="user_information.html">Thông tin cá nhân</a>
+                                            </li>
+                                            <li><a class="custom-input3" href="user_cart.html">Giỏ hàng</a></li>
+                                            <li><a class="custom-input3" href="user_order.html">Đặt hàng</a></li>
+                                            <li><a class="custom-input3" href="user_myorder.html">Đơn hàng</a></li>
+                                            <li><a class="custom-input3" href="user_index.html">Trang chủ</a></li>
+                                            <li><a class="custom-input3" href="user_login.html">Tài khoản khác</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/api/number_card.js"></script>
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <a href="./"><img style="height: 55px;" src="img/logo.png"></a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="shopping-item custom-input">
+                        <a href="user_cart.html"><span class="cart-amunt">Giỏ hàng</span>
+                            <i class="fa fa-shopping-cart"></i>
+                            <span id="number-card" class="product-count"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a class="custom-input2" href="user_index.html">Trang chủ</a></li>
+                        <li class="active"><a class="custom-input2" href="user_shop.html">Danh sách sản phẩm</a></li>
+                        <li><a class="custom-input2" href="user_singleproduct.html">Thông tin sản phẩm</a></li>
+                        <li><a class="custom-input2" href="user_order.html">Đặt hàng</a></li>
+                        <li><a class="custom-input2" href="user_news.html">Tin tức</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-big-title-area"> </div>
+
+    <!-- ------------------------------------------------Tất cả sản phẩm ---------------------------------------------- -->
+    <script type="module" src="./js/api/shopage.js"></script>
+    <!-- <script type="module" src="./js/api/productinfo.js"></script> -->
+
+    <div class="single-product-area">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-md-3" style="margin-left: 35px ;">
+                    <select id="list-category" class="form-control">
+                        <option value="all">Tất cả sản phẩm</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3" style="margin-left: -15px ;">
+                    <input type="text" id="search-input" class="form-control" placeholder="Tìm kiếm sản phẩm..."
+                        style="width: 400px;">
+                </div>
+
+                <div class="col-md-3" style="margin-left: 120px ;">
+                    <div class="block-filter-sort">
+                        <div class="filter-sort__list-filter">
+                            <div class="filter-wrapper">
+                                <button id="showFitter" class="btn-filter button__filter-parent" style="width: 100px;">
+                                    <div class="icon mr-1 ml-0"><i class="fas fa-filter"></i></div>
+                                    Bộ lọc
+                                </button>
+
+                                <div id="filterAll" class="list-filter-child all">
+                                    <div class="listFilter">
+                                        <div class="filter-wrapper">
+                                            <div class="is-flex title-filter">
+                                                <p>Bộ nhớ trong</p>
+                                            </div>
+                                            <ul>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="memory01">
+                                                        Trên 512GB
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="memory02">
+                                                        128GB và 256GB
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="memory03">
+                                                        32GB và 64GB
+                                                    </button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="filter-wrapper">
+                                            <div class="is-flex title-filter">
+                                                <p>Dung lượng RAM</p>
+                                            </div>
+                                            <ul>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="ram01">
+                                                        4GB - 6GB
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="ram02">
+                                                        8GB - 12GB
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="ram03">
+                                                        Dưới 4GB
+                                                    </button></li>
+                                            </ul>
+                                        </div>
+                                        <div class="filter-wrapper">
+                                            <div class="is-flex title-filter">
+                                                <p>Trong tầm giá</p>
+                                            </div>
+                                            <ul>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="price01">
+                                                        Dưới 5 triệu
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="price02">
+                                                        Từ 5 đến 10 triệu
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="price03">
+                                                        Từ 10 đến 20 triệu
+                                                    </button></li>
+                                                <li><button class="btn-filter btn-filter-item button__filter-child"
+                                                        id="price04">
+                                                        Trên 20 triệu
+                                                    </button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="btn-filter-group show">
+                                        <button id="hideFitter" class="button is-small is-danger is-light">Đóng
+                                        </button>
+                                        <button class="button is-small is-danger submit"
+                                            style="background-color: rgb(134, 233, 233);">
+                                            Xem kết quả
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3" style="margin-left: -180px ;">
+                    <select id="sort-select" class="form-control">
+                        <option value="">Sắp xếp</option>
+                        <option value="price-asc">Giá tăng dần</option>
+                        <option value="price-desc">Giá giảm dần</option>
+                        <option value="name-asc">Tên A-Z</option>
+                        <option value="name-desc">Tên Z-A</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row" id="shop-page">
+                <!-- Danh sách sản phẩm ở đây -->
+            </div>
+            <div style="display: flex;justify-content: center; align-items: center;margin-top: 10px;" id="noProduct">
+                <h3><i id="customText"></i></h3>
+            </div>
+            <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
+                <ul class="pagination">
+                    <!-- Pagination items will be inserted here by JavaScript -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- ------------------------------------------------Thông tin chi tiết về cưqra hàng ---------------------------------------------- -->
+        <div class="footer-top-area" style="height: 400px;margin-bottom: -150px;">
+            <div class="zigzag-bottom"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-about-us">
+                            <h2><span>Hieu Store</span></h2>
+                            <p>Website bán điện thoại trực tuyến với những chiếc điện thoại mới nhất được cập nhập liên
+                                tục.
+                            </p>
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/trunghieu1st/" target="_blank"><i
+                                        class="fa fa-facebook"></i></a>
+                                <!-- <a href="#" target="_blank"><i class="fa fa-twitter"></i></a> -->
+                                <a href="https://www.youtube.com/channel/UCofZpSuoW0D5fRM2hv6IOLQ" target="_blank"><i
+                                        class="fa fa-youtube"></i></a>
+                                <!-- <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-menu">
+                            <h2 class="footer-wid-title">Công cụ</h2>
+                            <ul>
+                                <li><a href="user_information.html">Tài khoản của tôi</a></li>
+                                <li><a href="user_singleproduct.html">Lịch sử đặt hàng</a></li>
+                                <li><a href="user_cart.html">Giỏ hàng</a></li>
+                                <li><a href="user_index.html">Trang chủ</a></li>
+                                <li><a href="user_news.html">Tin tức</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-menu">
+                            <h2 class="footer-wid-title">Danh mục sản phẩm</h2>
+                            <ul>
+                                <li><a href="user_shop.html">Điện thoại iPhone</a></li>
+                                <li><a href="user_shop.html">Điện thoại Samsung</a></li>
+                                <li><a href="user_shop.html">Điện thoại Nokia</a></li>
+                                <li><a href="user_shop.html">Điện thoại Xiaome</a></li>
+                                <li><a href="user_shop.html">Điện thoại Oppo</a></li>
+                                <li><a href="user_shop.html">Phụ kiện điên thoại</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-newsletter">
+                            <h2 class="footer-wid-title">Góp ý</h2>
+                            <p>Góp ý cho cửa hàng là một điều quan trọng để cửa hàng thay đổi tốt hơn và phát triển hơn!
+                            </p>
+                            <div class="newsletter-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Nhập góp ý của bạn..." style="margin-bottom: 5px;">
+                                    <input type="submit" value="Gửi góp ý">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- jQuery sticky menu -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <!-- jQuery easing -->
+    <script src="js/jquery.easing.1.3.min.js"></script>
+    <!-- Main Script -->
+    <script src="js/user_main.js"></script>
+    <script type="module" src="./js/api/add_to_card.js"></script>
+    <script src="./js/api/fitter.js"></script>
+    <script type="module" src="./js/api/switchLogin.js"></script>
+    <script type="module" src="./js/api/category.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Icon bo loc -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</body>
+
+</html>

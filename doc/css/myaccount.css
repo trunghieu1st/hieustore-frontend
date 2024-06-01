@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .personal-info, .cart {
+    flex: 1;
+  }
+  
+  .cart {
+    display: flex;
+  }
+  
+  .cart > div {
+    margin-right: 20px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .contact-form {
+            background: #fff;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            width: 70%;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        .contact-form .form-control {
+            border-radius: 1rem;
+        }
+        .contact-image {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-image img {
+            border-radius: 6rem;
+            width: 11%;
+        }
+        .contact-form h3 {
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #495057;
+        }
+        .btnContact {
+            width: 100%;
+            border: none;
+            border-radius: 1rem;
+            padding: 1.5%;
+            background: #0062cc;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btnContactSubmit {
+            width: 100%;
+            border-radius: 1rem;
+            padding: 1.5%;
+            color: #fff;
+            background-color: #0062cc;
+            border: none;
+            cursor: pointer;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #495057;
+            font-size: 1.5rem;
+        }
+        .faq-section {
+            margin-top: 2rem;
+        }
+        .faq-header {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+    </div>
+    <form id="contactForm" method="post">
+        <h3>Drop Us a Message</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name *" />
+                    <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Your Email *" />
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone Number *" />
+                    <div class="invalid-feedback">Please enter your phone number.</div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btnContact">Send Message</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea name="message" id="message" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                    <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </form>
+
+    <div class="faq-section">
+        <h4 class="faq-header">Frequently Asked Questions</h4>
+        <div class="accordion" id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="faqHeading1">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                            What is your return policy?
+                        </button>
+                    </h2>
+                </div>
+                <div id="faq1" class="collapse show" aria-labelledby="faqHeading1" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Our return policy is simple. If you're not satisfied with your purchase, return it within 30 days for a full refund.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="faqHeading2">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                            Do you offer technical support?
+                        </button>
+                    </h2>
+                </div>
+                <div id="faq2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, we offer 24/7 technical support for all our products. You can contact us via email, phone, or live chat.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#privacyPolicyModal">
+            View Privacy Policy
+        </button>
+    </div>
+</div>
+
+<!-- Google Map -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d12524.343074273147!2d105.73102823974327!3d21.052304443087056!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1717076770753!5m2!1svi!2s" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div class="modal fade" id="privacyPolicyModal" tabindex="-1" role="dialog" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Our privacy policy explains how we use your personal data...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    $(document).ready(function() {
+        // Form validation
+        $('#contactForm').on('submit', function(event) {
+            event.preventDefault();
+            var isValid = true;
+
+            if (!$('#name').val()) {
+                $('#name').addClass('is-invalid');
+                isValid = false;
+            } else {
+                $('#name').removeClass('is-invalid');
+            }
+
+            if (!$('#email').val() || !validateEmail($('#email').val())) {
+                $('#email').addClass('is-invalid');
+                isValid = false;
+            } else {
+                $('#email').removeClass('is-invalid');
+            }
+
+            if (!$('#phone').val()) {
+                $('#phone').addClass('is-invalid');
+                isValid = false;
+            } else {
+                $('#phone').removeClass('is-invalid');
+            }
+
+            if (!$('#message').val()) {
+                $('#message').addClass('is-invalid');
+                is
+                $('#message').addClass('is-invalid');
+                isValid = false;
+            } else {
+                $('#message').removeClass('is-invalid');
+            }
+
+            if (isValid) {
+                // Handle form submission if valid
+                alert('Form submitted successfully!');
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+\.[^<>()[\]\.,;:\s@"]{2,}))$/i;
+            return re.test(String(email).toLowerCase());
+        }
+    });
+</script>
+</body>
+</html>

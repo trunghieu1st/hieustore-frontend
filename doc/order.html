@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Danh sách nhân viên | Quản trị Admin</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS-->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!-- or -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- Font-icon css-->
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+  <!-- Icon button them sua xoa -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <style>
+    /* Áp dụng kiểu dạng cho các thẻ th trong bảng có id là orderbody */
+    #orderbody th {
+      vertical-align: top;
+      /* Thiết lập vertical-align là top */
+      text-align: center;
+    }
+
+    .table-responsive-container {
+      max-height: 500px;
+      /* Chiều cao cố định cho container */
+      overflow: auto;
+      /* Thêm thanh cuộn cả chiều ngang và chiều dọc */
+      position: relative;
+    }
+
+    th {
+      white-space: nowrap;
+      /* Ngăn không cho tiêu đề xuống dòng */
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      z-index: 1;
+      /* Đảm bảo tiêu đề hiển thị trên các ô khác */
+    }
+  </style>
+</head>
+
+<body onload="time()" class="app sidebar-mini rtl">
+  <!-- Navbar-->
+  <header class="app-header">
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+      <!-- User Menu-->
+      <li><a class="app-nav__item" href="./index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      </li>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../images/avatar.jpg" width="50px"
+        alt="User Image">
+      <div>
+        <p class="app-sidebar__user-name"><b>Trung Hiếu</b></p>
+        <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+      </div>
+    </div>
+    <hr>
+    <ul class="app-menu">
+      <li><a class="app-menu__item" class="app-menu__item " href="user.html"><i
+            class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý người dùng</span></a></li>
+      <li><a class="app-menu__item" class="app-menu__item " href="category.html"><i
+            class='app-menu__icon bx bx-id-card'></i> <span class="app-menu__label">Quản lý danh mục</span></a></li>
+      <li><a class="app-menu__item" href="product.html"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span
+            class="app-menu__label">Quản lý sản phẩm</span></a>
+      </li>
+      <li><a class="app-menu__item" href="slide.html"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span
+            class="app-menu__label">Quản lý trình chiếu</span></a>
+      </li>
+      <li><a class="app-menu__item" href="new.html"><i class='app-menu__icon bx bx-purchase-tag-alt'></i><span
+            class="app-menu__label">Quản lý tin tức</span></a>
+      </li>
+      <li><a class="app-menu__item" href="product_option.html"><i class='app-menu__icon bx bx-task'></i><span
+            class="app-menu__label">Quản lý lựa chọn</span></a></li>
+      <li><a class="app-menu__item" href="paymentMethods.html"><i class='app-menu__icon bx bx-pie-chart-alt-2'></i><span
+            class="app-menu__label">Quản lý thanh
+            toán</span></a>
+      </li>
+      <li><a class="app-menu__item active" href="order.html"><i class='app-menu__icon bx bx-pie-chart-alt-2'></i><span
+            class="app-menu__label">Quản lý giao hàng</span></a>
+      </li>
+      <li><a class="app-menu__item" class="app-menu__item" href="baocao.html"><i
+            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh
+            thu</span></a>
+      </li>
+    </ul>
+  </aside>
+  <main class="app-content">
+    <div class="app-title">
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item active"><a href="#"><b>Danh sách đơn hàng</b></a></li>
+      </ul>
+      <div id="clock"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <div class="tile-body">
+            <!-- <div class="row element-button">
+              <div class="col-sm-2">
+                <a class="btn btn-add btn-sm" href="#" title="Thêm"><i class="fas fa-plus"></i>
+                  Tạo mới đơn hàng</a>
+              </div>
+            </div> -->
+            <div class="container-fluid">
+              <div class="table-responsive-container">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>STT</th>
+                      <th hidden>ID</th>
+                      <th>Tên người nhận</th>
+                      <th>Số điện thoại</th>
+                      <th>Địa chỉ nhận hàng</th>
+                      <th>Ghi chú</th>
+                      <th>Phí giao hàng</th>
+                      <th>Tổng tiền hàng</th>
+                      <th>Giảm giá</th>
+                      <th>Tổng tiền phải trả</th>
+                      <th>Trạng thái thanh toán</th>
+                      <th>Trạng thái giao hàng</th>
+                      <th>Thời gian đặt hàng</th>
+                      <th>Chức năng</th>
+                      <th hidden>Trạng thái</th>
+                    </tr>
+                  </thead>
+                  <tbody id="orderTable">
+                    <!-- Dữ liệu đơn hàng sẽ được chèn vào đây -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--
+  MODAL
+-->
+  <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+    data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group  col-md-12">
+              <span class="thong-tin-thanh-toan">
+                <h5>Chỉnh sửa thông tin đơn hàng</h5>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label class="control-label">Mã đơn hàng</label>
+              <input class="form-control" type="text" required disabled id="orderId" name="orderId">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="control-label">Trạng thái</label>
+              <select class="form-control" id="status" name="status">
+                <option value="1">Chờ xác nhận</option>
+                <option value="2">Chuẩn bị hàng</option>
+                <option value="3">Đang giao hàng</option>
+                <option value="4">Đã giao hàng</option>
+                <option value="5">Đã hủy hàng</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <button id="btSave" class="btn btn-save" type="button">Lưu lại</button>
+          <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+          <br>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+MODAL
+-->
+  <!-- Essential javascripts for application to work-->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="src/jquery.table2excel.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+  <script src="./js/call_api/datetime.js"></script>
+
+  <!-- The javascript plugin to display page loading on top-->
+  <script src="js/plugins/pace.min.js"></script>
+  <!-- Page specific javascripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+  <!-- Data table plugin-->
+  <!-- Hiện ngày -->
+  <script src="./js/call_api/datetime.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+
+  <script type="module" src="./js/call_api/order.js"></script>
+  <script type="module" src="./js/call_api/editOrder.js"></script>
+  <script type="module" src="./js/call_api/checkToken.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+</body>
+
+</html>
