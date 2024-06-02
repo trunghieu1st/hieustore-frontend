@@ -41,8 +41,8 @@
                             </span>
                         </div>
                         <div class="wrap-input100 validate-input">
-                            <input required class="input100" type="text" placeholder="Tên người dùng" name="fullname"
-                                id="fullname">
+                            <input required class="input100" type="text" placeholder="Tên người dùng" name="fullName"
+                                id="fullName">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class='bx bx-user'></i>
@@ -66,7 +66,7 @@
                         <div class="wrap-input100 validate-input">
                             <input required autocomplete="off" class="input100" type="password" placeholder="Mật khẩu"
                                 name="current-password" id="password-field">
-                            <span toggle="#password-field" class="bx fa-fw bx-hide field-icon click-eye"></span>
+                            <span toggle="#password-field" class="bx fa-fw bx-hide field-icon click-eye1"></span>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class='bx bx-key'></i>
@@ -74,8 +74,8 @@
                         </div>
                         <div class="wrap-input100 validate-input">
                             <input required autocomplete="off" class="input100" type="password"
-                                placeholder="Nhập lại mật khẩu" name="confirm-password" id="password-field">
-                            <span toggle="#password-field" class="bx fa-fw bx-hide field-icon click-eye"></span>
+                                placeholder="Nhập lại mật khẩu" name="confirm-password" id="confirm-password">
+                            <span toggle="#confirm-password-field" class="bx fa-fw bx-hide field-icon click-eye2"></span>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class='bx bx-key'></i>
@@ -107,14 +107,31 @@
     <script type="text/javascript">
         //show - hide mật khẩu
         function myFunction() {
-            var x = document.getElementById("myInput");
+            var x = document.getElementById("password-field");
             if (x.type === "password") {
                 x.type = "text"
             } else {
                 x.type = "password";
             }
         }
-        $(".click-eye").click(function () {
+        function myFunction() {
+            var x = document.getElementById("confirm-password");
+            if (x.type === "password") {
+                x.type = "text"
+            } else {
+                x.type = "password";
+            }
+        }
+        $(".click-eye1").click(function () {
+            $(this).toggleClass("bx-show bx-hide");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+        $(".click-eye2").click(function () {
             $(this).toggleClass("bx-show bx-hide");
             var input = $($(this).attr("toggle"));
             if (input.attr("type") == "password") {

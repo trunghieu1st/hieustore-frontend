@@ -27,8 +27,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         await fetchCartData();
         var number_card = document.getElementById('number-card').textContent;
 
+       
         document.getElementById('order-payment').addEventListener('click', async function () {
             if (number_card > 0) {
+                var addressMy= document.getElementById('address').value;
+                if(!addressMy){
+                    toastr.error("Vui lòng cập nhật thông tin cá nhân trước khi đặt hàng!");
+                    return;
+                }
                 let amount = removeDot(document.getElementById('amount').textContent);
                 let id = getCurrentTimeAsNumber();
                 let payType = "payment_on_delivery";

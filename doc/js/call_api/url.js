@@ -1,4 +1,4 @@
-const baseApiUrl = "http://localhost:8080/api/v1";
+const baseApiUrl = "https://hieu-store.up.railway.app/api/v1";
 
 export const apiPaths = {
   

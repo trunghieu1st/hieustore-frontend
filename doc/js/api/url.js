@@ -1,4 +1,4 @@
-const baseApiUrl = "http://localhost:8080/api/v1";
+const baseApiUrl = "https://hieu-store.up.railway.app/api/v1";
 export const apiPaths = {
     //Slide
     getAllSlides: `${baseApiUrl}/slide/all`,
@@ -40,6 +40,7 @@ export const apiPaths = {
     getMyAddress: `${baseApiUrl}/address/all`,
     getMyAddressById: `${baseApiUrl}/address/all/`, // id
     updateAddress: `${baseApiUrl}/address/`, // +AddressId
+    createAddress: `${baseApiUrl}/address/create`,
 
     //News
     getAllNews: `${baseApiUrl}/news/all`,

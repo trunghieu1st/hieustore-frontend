@@ -23,8 +23,8 @@ app.post('/create-payment-link', async (req, res) => {
         amount: amount,
         description: description,
         orderCode: orderCode,
-        cancelUrl: baseUrl + `/hieustore_user/user_order.html`,
-        returnUrl: baseUrl + `/hieustore_user/user_order.html`
+        cancelUrl: baseUrl + `/frontend/doc/user_order.html`,
+        returnUrl: baseUrl + `/frontend/doc/user_order.html`
     };
 
     try {
@@ -58,7 +58,7 @@ app.post('/zalo/payment', async (req, res) => {
     const { app_user, amount, description, bank_code } = req.body;
 
     const embed_data = {
-        redirecturl: baseUrl + '/hieustore_user/user_order.html',
+        redirecturl: baseUrl + '/frontend/doc/user_order.html',
     };
 
     const items = [];
@@ -73,7 +73,7 @@ app.post('/zalo/payment', async (req, res) => {
         embed_data: JSON.stringify(embed_data),
         amount: amount || 200,
         callback_url: baseUrl + '/callback', // Thay bằng URL của bạn
-        description: description || `Lazada - Payment for the order #${transID}`,
+        description: description || `HieuStore -Thanh toán đơn hàng #${transID}`,
         bank_code: bank_code || '',
     };
 

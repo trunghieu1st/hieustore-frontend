@@ -110,20 +110,40 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (file) {
             formData.append('avatar', file);
         }
-        const response2 = fetch(apiPaths.updateAddress + `${localStorage.getItem('addressId')}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + accessToken
-            },
-            body: JSON.stringify({
-                "customerName": fullNameInput,
-                "phone": phoneInput,
-                "address": addressInput,
-                "type": 0,
-                "addressDefault": 1
-            })
-        });
+
+        const addressId = localStorage.getItem('addressId');
+        if (addressId && addressId != null) {
+            const response2 = fetch(apiPaths.updateAddress + addressId, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + accessToken
+                },
+                body: JSON.stringify({
+                    "customerName": fullNameInput,
+                    "phone": phoneInput,
+                    "address": addressInput,
+                    "type": 0,
+                    "addressDefault": 1
+                })
+            });
+        }
+        else{
+            const response2 = fetch(apiPaths.createAddress, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + accessToken
+                },
+                body: JSON.stringify({
+                    "customerName": fullNameInput,
+                    "phone": phoneInput,
+                    "address": addressInput,
+                    "type": 0,
+                    "addressDefault": 1
+                })
+            });
+        }
         updateUser(formData);
     });
     document.getElementById('cancel').addEventListener('click', function (e) {

@@ -1,6 +1,6 @@
 import { apiPaths } from "./url.js"
 document.getElementById("btSingup").addEventListener("click", async function () {
-    const fullName = document.getElementById("fullname").value;
+    const fullName = document.getElementById("fullName").value;
     const email = document.getElementById("email").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("password-field").value;
